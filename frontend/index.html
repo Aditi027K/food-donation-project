@@ -1,0 +1,84 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Donation & Pickup System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🍲 Food Donation & Pickup System</h1>
+    <div id="dashboard" class="dashboard">
+        <div class="stat-card">
+          <div class="stat-emoji">👥</div>
+          <div class="stat-label">Total Donors</div>
+          <div class="stat-value" id="statDonors">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-emoji">🍲</div>
+          <div class="stat-label">Total Foods</div>
+          <div class="stat-value" id="statFoods">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-emoji">🛻</div>
+          <div class="stat-label">Total Pickups</div>
+          <div class="stat-value" id="statPickups">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-emoji">🟢</div>
+          <div class="stat-label">Available Foods</div>
+          <div class="stat-value" id="statAvailableFoods">0</div>
+        </div>
+      </div>
+      
+    <!-- DONORS SECTION -->
+    <section>
+        <h2>Add Donor</h2>
+        <form id="donorForm">
+            <input type="text" id="donorName" placeholder="Donor Name" required>
+            <input type="text" id="donorContact" placeholder="Contact" required>
+            <button type="submit">Add Donor</button>
+        </form>
+        <h3>All Donors</h3>
+        <ul id="donorList"></ul>
+    </section>
+
+    <!-- FOOD ITEMS SECTION -->
+    <section>
+        <h2>Add Food Item</h2>
+        <form id="foodForm">
+            <select id="foodDonorId" required>
+                <option value="">Select Donor</option>
+            </select>
+            <input type="text" id="foodName" placeholder="Food Name" required>
+            <input type="text" id="foodQty" placeholder="Quantity" required>
+            <input type="date" id="foodExpiry" placeholder="Expiry Date" required>
+            <button type="submit">Add Food</button>
+        </form>
+        <h3>All Food Items</h3>
+        <h3>Available Foods</h3>
+    <ul id="availableFoodList"></ul>
+    <h3>Picked Up Foods</h3>
+        <ul id="pickedFoodList"></ul>
+
+    </section>
+
+    <!-- PICKUPS SECTION -->
+    <section id="pickupSection">
+        <h2>Add Pickup</h2>
+        <form id="pickupForm">
+            <select id="pickupFoodId" required>
+                <option value="">Select Food Item</option>
+            </select>
+            <input type="text" id="pickupPerson" placeholder="Pickup Person" required>
+            <input type="datetime-local" id="pickupTime" required>
+            <button type="submit">Add Pickup</button>
+        </form>
+        <h3>All Pickups</h3>
+        <ul id="pickupList"></ul>
+    </section>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
